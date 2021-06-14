@@ -1,17 +1,28 @@
 from django.shortcuts import render, redirect
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
+from django.utils.translation import gettext_lazy as _
 from .forms import UserRegistrationForm
+from .utils import verify
 
 
 def registration(request):
     if request.method == 'POST':
-        form = UserRegistrationForm(request.POST)
+        form = UserRegistrationForm(request.POST, request.FILES)
         if form.is_valid():
-            form.save()
-            username = form.cleaned_data.get('username')
-            messages.success(request, f'Аккаунт {username} создан!')
-            return redirect('login')
+            passport_image = form.cleaned_data.get('passport_image')
+            cam_image = form.cleaned_data.get('cam_image')
+            if verify(passport_image, cam_image)[0]:
+                form.save()
+                email = form.cleaned_data.get('email')
+                messages.success(request, f'Аккаунт {email} создан!')
+                return redirect('login')
+            else:
+                messages.warning(request, _('Лица на фотографиях не совпадают!'))
+                return redirect('registration')
+        else:
+            messages.warning(request, _('Заполните все поля!'))
+            return redirect('registration')
     else:
         form = UserRegistrationForm()
     return render(request, 'users/registration.html', {'form': form})
