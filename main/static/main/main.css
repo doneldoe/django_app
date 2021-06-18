@@ -12,16 +12,18 @@ ul {
     margin: 0;
 }
 
-.bg-black {
-    background-color: #232931;
+.navbar-red {
+    background-color: #e32c1e;
 }
 
 .site-header .navbar-nav .nav-link {
-    color: #eeeeee;
+    color: #fafafa;
+    transition: 100ms;
 }
 
 .site-header .navbar-nav .nav-link:hover {
-    color: #fff;
+    color: #ffffff;
+    text-shadow: 0 0 1px #ffffff;
 }
 
 .site-header .navbar-nav .nav-link.active {
@@ -34,6 +36,17 @@ ul {
     border: 1px solid #dddddd;
     border-radius: 3px;
     margin-bottom: 20px;
+}
+
+.btn {
+    border: 2px solid #e32c1e;
+    color: #e32c1e;
+    transition: 100ms;
+}
+
+.btn:hover {
+    background-color: #e32c1e;
+    color: #ffffff;
 }
 
 .account-img {

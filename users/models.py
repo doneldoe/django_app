@@ -30,9 +30,12 @@ class CustomUserManager(BaseUserManager):
 
 
 class Profile(AbstractBaseUser, PermissionsMixin):
-    email = models.EmailField(_('email address'), unique=True)
-    first_name = models.CharField(max_length=60, blank=True)
     last_name = models.CharField(max_length=60, blank=True)
+    first_name = models.CharField(max_length=60, blank=True)
+    patronymic = models.CharField(max_length=60, blank=True)
+    email = models.EmailField(_('email address'), unique=True)
+    phone_number = models.IntegerField(blank=True, null=True, unique=True)
+    agree = models.BooleanField(default=False)
     passport_image = models.ImageField(upload_to='passport_images')
     cam_image = models.ImageField(upload_to='cam_images')
     date_joined = models.DateTimeField(default=timezone.now)

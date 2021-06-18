@@ -1,4 +1,14 @@
 {% extends "main/base.html" %}
 {% block content %}
-    <h1>Главная</h1>
+    <div class="main">
+        {% if user.is_authenticated %}
+            <h1 class="title">Главная</h1>
+            <a class="nav-item nav-link" href="{% url 'profile' %}">Профиль</a>
+            <a class="nav-item nav-link" href="{% url 'logout' %}">Выйти</a>
+        {% else %}
+            <h1 class="title">Вход в личный кабинет</h1>
+            <a class="nav-item nav-link" href="{% url 'login' %}">Войти</a>
+            <a class="nav-item nav-link" href="{% url 'registration' %}">Зарегистрироваться</a>
+        {% endif %}
+    </div>
 {% endblock %}

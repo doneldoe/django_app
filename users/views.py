@@ -21,8 +21,7 @@ def registration(request):
                 messages.warning(request, _('Лица на фотографиях не совпадают!'))
                 return redirect('registration')
         else:
-            messages.warning(request, _('Заполните все поля!'))
-            return redirect('registration')
+            messages.warning(request, _('Ошибка!'))
     else:
         form = UserRegistrationForm()
     return render(request, 'users/registration.html', {'form': form})
