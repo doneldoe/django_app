@@ -1,0 +1,68 @@
+body {
+    background: #252525;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: #ffffff;
+}
+
+a {
+    color: #ffffff;
+}
+
+.main {
+    margin-top: 12.5rem;
+    transition: all 0.25s ease;
+}
+
+.top-link {
+    padding: 0.5rem 10rem;
+    border-radius: 4px;
+    background-color: rgb(225, 175, 45);
+    margin-top: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.top-link:hover {
+    color: #ffffff;
+    background-color: rgb(220, 170, 30);
+}
+
+.top-link:active {
+    color: #ffffff;
+    background-color: rgb(210, 160, 25);
+}
+
+.bottom-link {
+    padding: 0;
+    color: #eeeeee;
+    border-bottom: 1px solid transparent;
+}
+.bottom-link:hover {
+    color: #eeeeee;
+    border-bottom: 1px solid #ffffff;
+}
+
+.profile-link {
+    padding: 0.5rem 10rem;
+    border-radius: 4px;
+    background-color: rgba(240, 50, 36, 0.9);
+    color: #ffffff;
+    margin-top: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.profile-link:hover {
+    color: #ffffff;
+    background-color: rgba(255, 50, 36, 0.9);
+}
+
+.logout-link {
+    padding: 0;
+    color: #ffffff;
+    border-bottom: 1px solid transparent;
+}
+.logout-link:hover {
+    color: #e32c1e;
+    border-bottom: 1px solid #e32c1e;
+}

@@ -34,6 +34,11 @@ class Profile(AbstractBaseUser, PermissionsMixin):
     first_name = models.CharField(max_length=60, blank=True)
     patronymic = models.CharField(max_length=60, blank=True)
     email = models.EmailField(_('email address'), unique=True)
+    CHOICES = (
+        ('М', 'Мужской'),
+        ('Ж', 'Женский')
+    )
+    sex = models.CharField(max_length=60, choices=CHOICES)
     phone_number = models.IntegerField(blank=True, null=True, unique=True)
     agree = models.BooleanField(default=False)
     passport_image = models.ImageField(upload_to='passport_images')

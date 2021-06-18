@@ -1,33 +1,11 @@
 body {
     background: #eeeeee;
-    color: #333333;
+    color: #252525;
     margin-top: 5rem;
 }
 
 h1, h2, h3, h4, h5, h6 {
-    color: #444444;
-}
-
-ul {
-    margin: 0;
-}
-
-.navbar-red {
-    background-color: #e32c1e;
-}
-
-.site-header .navbar-nav .nav-link {
-    color: #fafafa;
-    transition: 100ms;
-}
-
-.site-header .navbar-nav .nav-link:hover {
-    color: #ffffff;
-    text-shadow: 0 0 1px #ffffff;
-}
-
-.site-header .navbar-nav .nav-link.active {
-    font-weight: 500;
+    color: #252525;
 }
 
 .content-section {
@@ -36,24 +14,88 @@ ul {
     border: 1px solid #dddddd;
     border-radius: 3px;
     margin-bottom: 20px;
+    transition: all 0.25s;
 }
 
-.btn {
-    border: 2px solid #e32c1e;
-    color: #e32c1e;
-    transition: 100ms;
+.asteriskField {
+    display: none;
 }
 
-.btn:hover {
-    background-color: #e32c1e;
+ul {
+    margin: 0;
+}
+
+.navbar {
+    padding: 0 1rem;
+}
+
+.navbar-brand {
+    padding: 0.9rem 1.25rem;
+    background-color: rgba(240, 50, 36, 0.9);
+    transition: all 0.25s;
+}
+
+.navbar-brand:hover {
+    text-decoration: underline #ffffff;
+}
+
+.navbar-brand {
+    font-size: 1.5rem;
     color: #ffffff;
 }
 
-.account-img {
-    height: 125px;
-    width: 125px;
-    margin-right: 20px;
-    margin-bottom: 16px;
+.navbar-brand:hover {
+    color: #ffffff;
+}
+
+.form-check {
+    display: flex;
+}
+
+.form-check .form-text {
+    margin: 0;
+}
+
+#div_id_sex > div {
+    display: flex;
+}
+
+#div_id_sex .form-check input[type="radio"] {
+    opacity: 0;
+    position: fixed;
+    width: 0;
+}
+
+#div_id_sex > div .form-check:first-child {
+    padding-left: 0;
+}
+
+#div_id_sex .form-check label {
+    display: inline-block;
+    background-color: rgba(195, 225, 255, 0.3);
+    padding: 10px 20px;
+    font-family: sans-serif, Arial;
+    font-size: 16px;
+    border-radius: 32px;
+}
+
+#div_id_sex .form-check input[type="radio"]:checked + label {
+    background-color: rgb(195, 225, 255);
+}
+
+#div_id_agree .text-muted {
+    color: #252525!important;
+}
+
+.btn {
+    background-color: rgba(240, 50, 36, 0.9);
+    color: #ffffff;
+    min-width: 11.5rem;
+}
+
+.btn:hover {
+    background-color: rgb(255, 50, 36);
+    color: #ffffff;
 }
 
 .account-heading {

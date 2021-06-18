@@ -1,14 +1,18 @@
 {% extends "main/base.html" %}
+{% load static %}
 {% block content %}
-    <div class="main">
+    {% block css %}
+        <link rel="stylesheet" href="{% static 'main/home.css' %}">
+    {% endblock %}
+    <div class="main d-flex flex-column align-items-center">
         {% if user.is_authenticated %}
-            <h1 class="title">Главная</h1>
-            <a class="nav-item nav-link" href="{% url 'profile' %}">Профиль</a>
-            <a class="nav-item nav-link" href="{% url 'logout' %}">Выйти</a>
+            <h2 class="title">Главная</h2>
+            <a class="nav-item nav-link profile-link" href="{% url 'profile' %}">Профиль</a>
+            <a class="nav-item nav-link logout-link" href="{% url 'logout' %}">Выйти</a>
         {% else %}
-            <h1 class="title">Вход в личный кабинет</h1>
-            <a class="nav-item nav-link" href="{% url 'login' %}">Войти</a>
-            <a class="nav-item nav-link" href="{% url 'registration' %}">Зарегистрироваться</a>
+            <h2 class="title">Вход в личный кабинет</h2>
+            <a class="nav-item nav-link top-link" href="{% url 'login' %}">Войти</a>
+            <a class="nav-item nav-link bottom-link" href="{% url 'registration' %}">Стать клиентом</a>
         {% endif %}
     </div>
 {% endblock %}
