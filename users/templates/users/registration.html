@@ -8,6 +8,38 @@
             <fieldset class="form-group">
                 <legend class="border-bottom mb-4">Регистрация в личный кабинет</legend>
                 {{ form|crispy }}
+
+                <div id="passport_wrap">
+                    <h3>Фотография паспорта</h3>
+                    <div class="passport">
+                        <a id="open_passport_cam" href="javascript:void(open_passport_cam())">Открыть камеру</a>
+
+                        <div class="d-none" id="passport_camera" style="width: 160px; height: 120px"></div>
+                        <div class="d-none" id="passport_result" style="width: 160px; height: 120px"></div>
+
+                        <a class="d-none" id="take_passport_snapshot"
+                           href="javascript:void(take_passport_snapshot())">Сделать снимок</a>
+                        <a class="d-none" id="retake_passport_snapshot"
+                           href="javascript:void(retake_passport_snapshot())">Переснять</a>
+                        <a class="d-none" id="close_passport_cam" href="javascript:void(save_passport())">Сохранить</a>
+                    </div>
+                </div>
+
+                <div id="face_wrap" class="d-none">
+                    <h3>Ваша фотография</h3>
+                    <div class="face_block">
+                        <a id="open_face_cam" href="javascript:void(open_face_cam())">Открыть камеру</a>
+
+                        <div class="d-none" id="face_camera" style="width: 160px; height: 120px"></div>
+                        <div class="d-none" id="face_result" style="width: 160px; height: 120px"></div>
+
+                        <a class="d-none" id="take_face_snapshot" href="javascript:void(take_face_snapshot())">Сделать
+                            снимок</a>
+                        <a class="d-none" id="retake_face_snapshot"
+                           href="javascript:void(retake_face_snapshot())">Переснять</a>
+                        <a class="d-none" id="close_face_cam" href="javascript:void(save_face())">Сохранить</a>
+                    </div>
+                </div>
             </fieldset>
             <div class="form-group d-flex">
                 <button class="btn registration d-none" type="submit">Зарегистрироваться</button>
@@ -20,5 +52,6 @@
             </small>
         </div>
     </div>
+    <script src="{% static 'main/webcam.js' %}"></script>
     <script src="{% static 'main/app.js' %}"></script>
 {% endblock %}
