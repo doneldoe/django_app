@@ -1,5 +1,7 @@
 body {
-    background: rgba(0, 0, 0, .65) url("img/background-mountain.jpg");
+    height: 100vh;
+    background: rgba(0, 0, 0, .65) url("https://source.unsplash.com/1600x900/?landscape") no-repeat center;
+    background-size: cover;
     background-blend-mode: darken;
 }
 
