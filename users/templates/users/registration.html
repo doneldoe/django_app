@@ -1,5 +1,6 @@
 {% extends "main/base.html" %}
 {% load crispy_forms_tags %}
+{% load static %}
 {% block content %}
     <div class="content-section">
         <form method="POST" enctype="multipart/form-data">
@@ -8,8 +9,9 @@
                 <legend class="border-bottom mb-4">Регистрация в личный кабинет</legend>
                 {{ form|crispy }}
             </fieldset>
-            <div class="form-group">
-                <button class="btn" type="submit">Зарегистрироваться</button>
+            <div class="form-group d-flex">
+                <button class="btn registration d-none" type="submit">Зарегистрироваться</button>
+                <button class="btn next-btn" type="button" onclick="showForm()">Продолжить</button>
             </div>
         </form>
         <div class="border-top pt-3">
@@ -18,4 +20,5 @@
             </small>
         </div>
     </div>
+    <script src="{% static 'main/app.js' %}"></script>
 {% endblock %}
