@@ -1,5 +1,6 @@
 from django import forms
 from .models import Profile
+from django.utils.translation import gettext_lazy as _
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 
 
@@ -73,6 +74,11 @@ class UserLoginForm(AuthenticationForm):
     def __init__(self, *args, **kwargs):
         super(UserLoginForm, self).__init__(*args, **kwargs)
 
+    error_messages = {
+        'invalid_login': _(
+            "Ваша фотография не совпадает с владельцем данного аккаунта"
+        )
+    }
     username = forms.EmailField(
         label='',
         widget=forms.EmailInput(

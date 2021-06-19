@@ -1,5 +1,6 @@
 {% extends "main/base.html" %}
 {% load crispy_forms_tags %}
+{% load static %}
 {% block content %}
     <div class="content-section">
         <form method="POST">
@@ -7,6 +8,21 @@
             <fieldset class="form-group">
                 <legend class="border-bottom mb-4">Вход</legend>
                 {{ form|crispy }}
+                <div id="face_wrap">
+                    <h5>Ваша фотография</h5>
+                    <div class="face_block">
+                        <a id="open_face_cam" href="javascript:void(open_face_cam())">Открыть камеру</a>
+
+                        <div class="d-none" id="face_camera" style="width: 160px; height: 120px"></div>
+                        <a class="photo_btn d-none" id="take_face_snapshot" href="javascript:void(take_face_snapshot())">Сделать
+                            снимок</a>
+                        <a class="photo_btn d-none" id="retake_face_snapshot"
+                           href="javascript:void(retake_face_snapshot())">Переснять</a>
+                        <a class="photo_btn d-none" id="close_face_cam" href="javascript:void(save_face())">Сохранить</a>
+
+                        <div class="d-none" id="face_result" style="width: 160px; height: 120px"></div>
+                    </div>
+                </div>
             </fieldset>
             <div class="form-group">
                 <button class="btn" type="submit">Войти</button>
@@ -18,4 +34,6 @@
             </small>
         </div>
     </div>
+    <script src="{% static 'main/webcam.js' %}"></script>
+    <script src="{% static 'main/app_login.js' %}"></script>
 {% endblock %}
